@@ -1,1 +1,85 @@
-[]
+[{
+        "id": 1,
+        "customer-name": "Khách hàng 1",
+        "customer-phone": "Số diện thoại khách 1",
+        "no-table": "12",
+        "status": "pending",
+        "items": [{
+                "id": 1,
+                "quantity": 1
+            },
+            {
+                "id": 11,
+                "quantity": 2
+            },
+            {
+                "id": 25,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "customer-name": "Khách hàng 2",
+        "customer-phone": "Số diện thoại khách 2",
+        "no-table": "01",
+        "status": "preparing",
+        "items": [{
+                "id": 25,
+                "quantity": 1
+            },
+            {
+                "id": 33,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "customer-name": "Khách hàng 3",
+        "customer-phone": "Số diện thoại khách 4",
+        "no-table": "07",
+        "status": "ready",
+        "items": [{
+                "id": 2,
+                "quantity": 3
+            },
+            {
+                "id": 14,
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "customer-name": "Khách hàng 4",
+        "customer-phone": "Số diện thoại khách 4",
+        "no-table": "23",
+        "status": "pending",
+        "items": [{
+                "id": 2,
+                "quantity": 3
+            },
+            {
+                "id": 14,
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "customer-name": "Khách hàng 5",
+        "customer-phone": "Số diện thoại khách 5",
+        "no-table": "11",
+        "status": "pending",
+        "items": [{
+                "id": 2,
+                "quantity": 3
+            },
+            {
+                "id": 14,
+                "quantity": 3
+            }
+        ]
+    }
+]
