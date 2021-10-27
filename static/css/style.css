@@ -10,6 +10,11 @@
     --text-color-level-1: rgb(216, 216, 216);
     --text-color-level-2: rgb(188, 188, 188);
     --text-color-level-3: rgb(48, 48, 48);
+    --font-size-level-1: 12px;
+    --font-size-level-2: 16px;
+    --font-size-level-3: 24px;
+    --font-size-level-4: 36px;
+    --font-size-level-5: 42px;
 }
 
 * {
