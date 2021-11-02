@@ -225,6 +225,19 @@ body {
 .btn-addcart:hover {
   background-color: rgb(250, 214, 117);
 }
+.page-link{
+  background-color: rgb(254, 245, 218);
+  color:black;
+  
+}
+.menu-pagination{
+ 
+  width: 400px;
+  margin:auto;
+  padding:20px;
+  margin-top:30px;
+}
+ 
 .menu__item__title {
   display: flex;
   justify-content: space-between;
