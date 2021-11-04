@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../static/vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../static/css/style.css">
+    <title>Menu</title>
+</head>
+
+<body>
+    <header style="height: 70px; text-align: center;line-height: 70px; font-size: 26px;">
+        <span style="font-weight: 700;">myRestaurant POS</span>
+    </header>
+    <div class="container-fluid menu">
+        <div class="row">
+            <div class="col-12 menu__banner ">
+            </div>
+        </div>
+        <div class="row menu__body">
+            <div class="col-12 col-lg-5">
+                <div class=" menu__category ">
+                    <div class="menu__category__label">Danh mục</div>
+                    <div id="category__list">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-7 ">
+                <div class="menu__food">
+                    <div class="menu__food__label">Thực đơn</div>
+                    <div id="food__list">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="openCartBtn">
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+    <div class="orderModal hidden">
+        <div class="orderContainer">
+            <div class="order__top">
+                <span class="order__close-btn">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <div class="order__detail">
+                        <div class="order__detail__title">Đơn hàng</div>
+                        <div id="order__detail__list">
+
+
+
+                        </div>
+                    </div>
+                    <div class="order__bill">
+                        <div class="order__bill-title">
+                            Tổng
+                        </div>
+                        <div id="order__subtotal-price">
+                            0
+                        </div>
+                        <div class="order__bill-title">
+                            Phụ phí
+                        </div>
+                        <div id="order__subtotal-price">
+                            0
+                        </div>
+                        <div class="order__bill__separate-line"></div>
+                        <div class="order__bill-title">
+                            Thành tiền
+                        </div>
+                        <div id="order__totle-price">
+                            0
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="order__customer-info">
+                        <div class="order__customer-info__title">Khách hàng</div>
+                        <form class="order__customer-info__form">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Tên</span>
+                                <input type="text" class="form-control customer-name" aria-describedby="basic-addon1" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">Số điện thoại</span>
+                                <input type="tel" class="form-control customer-phone" aria-describedby="basic-addon2" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon3">Bàn số</span>
+                                <input type="text" class="form-control no-table" value="14" disabled aria-describedby="basic-addon3">
+                            </div>
+                            <button type="submit" class="order__customer-info__submit">
+                                Đặt món
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div id="snackbar">Some text some message..</div>
+
+    <script src="./../static/vendor/js/jquery-3.6.0.min.js "></script>
+    <script src="./../static/vendor/js/popper.min.js "></script>
+    <!-- <script src="./../static/vendor/js/bootstrap.bundle.min.js "></script> -->
+    <script src="./../static/vendor/js/bootstrap.min.js "></script>
+    <script src="./../static/vendor/js/fontawesome.min.js "></script>
+    <script src="./../static/js/main.js "></script>
+    <script src="./../static/js/menu.js "></script>
+</body>
+
+</html>
