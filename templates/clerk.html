@@ -58,56 +58,6 @@
     <script src="./../static/js/main.js "></script>
     <script src="./../static/js/clerk.js "></script>
     <script>
-        $(document).ready(function() {
-            // func
-            $("#switch-pending").change(function() {
-                if (this.checked) {
-                    $(".order-item--pending").removeClass('hiddenOrderByControl');
-                } else {
-                    $(".order-item--pending").addClass('hiddenOrderByControl');
-                }
-            });
-            $("#switch-preparing").change(function() {
-                if (this.checked) {
-                    $(".order-item--preparing").removeClass('hiddenOrderByControl');
-                } else {
-                    $(".order-item--preparing").addClass('hiddenOrderByControl');
-                }
-            });
-            $("#inputCustomerName").on('input', function() {
-                var customerName = this.value.toLowerCase()
-                $(".order-item__info-name").each(function() {
-                    if ($(this).text().toLowerCase().includes(customerName)) {
-                        $(this).closest('.order-item').removeClass('hiddenOrderWhenFilterName');
-                    } else {
-                        $(this).closest('.order-item').addClass('hiddenOrderWhenFilterName');
-                    }
-                })
-            });
-            $("#inputTableNumber").on('input', function() {
-                var table = this.value
-                $(".order-item__info-table").each(function() {
-                    if ($(this).text() == table || !table) {
-                        $(this).closest('.order-item').removeClass('hiddenOrderWhenFilterTable');
-                    } else {
-                        $(this).closest('.order-item').addClass('hiddenOrderWhenFilterTable');
-                    }
-                })
-            });
-
-        });
-        $(document).delegate('.btn-confirm', 'click', function() {
-            let id = $(this).closest('.order-item').data('id')
-            console.log(`[Info]: Gửi thông báo xác nhận đơn hàng ${id}`)
-        })
-        $(document).delegate('.btn-cancel', 'click', function() {
-            let id = $(this).closest('.order-item').data('id')
-            console.log(`[Info]: Gửi thông báo hủy đơn hàng ${id}`)
-        })
-        $(document).delegate('.btn-done', 'click', function() {
-            let id = $(this).closest('.order-item').data('id')
-            console.log(`[Info]: Gửi thông báo hoàn thành đơn hàng ${id}`)
-        })
     </script>
 </body>
 
