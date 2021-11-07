@@ -79,7 +79,92 @@ function showFoodData(food) {
     return returnHtml
 
 }
-
+showModelMenu = (id, name, price, quantity, image,type)=>{
+    return (
+       ` 
+             <div class="model-menu">
+   
+   <div class="model-container rounded  col-10 col-md-8 m-auto ">
+       <div class="model-header d-flex justify-content-between">
+           THÔNG TIN MÓN ĂN 
+           <div class="order__detail__rm-icon d-flex justify-content-end p-3    ">
+           <i class="fas fa-times"></i>
+       </div>
+       </div>
+       <div class="model-body d-md-flex">
+           <div class="model-img col-12 col-md-6 p-2">
+               <img  src="../static/image/${image}" alt="">
+           </div>
+           <div class="model-infor col-12 col-md-6 px-3">
+               <div class="infor__item py-2 border-bottom">
+                   <div class="infor__price__line py-2  fw-bold">
+                       <div class="title-id w-100">
+                           Tên món 
+                       </div>
+                       <div class="title-category w-100">
+                           Loại 
+                       </div>
+                       <div class="title-price w-100 d-flex justify-content-end  ">
+                           Giá  
+                       </div>
+                   </div>
+                   <div class="infor__price__line     ">
+                       <div class="title-id w-100">
+                           ${name}
+                       </div>
+                       <div class="title-category w-100">
+                           ${type}
+                       </div>
+                       <div class="title-price w-100 d-flex justify-content-end   cl-red fw-bold">
+                           ${price} đ
+                       </div>
+                   </div>
+               </div>
+               <div class="infor__item py-3 border-bottom d-flex justify-content-between">
+                   <div class="fw-bold  fs-5">Quantity</div>
+                   <div class="d-flex align-items-center">
+   
+                       <div class="btn-quantity border border-success rounded decrease-quatity  ">
+                           -
+                       </div>
+                       <div class="btn-quantity value-quantity">
+                           1
+                       </div>
+                       <div class="btn-quantity  border border-danger rounded   increase-quantity  ">
+                           +
+                       </div>
+   
+                   </div>
+               </div>
+               <div class="infor__item py-1    ">
+                   <div class="infor-line d-flex py-1 ">
+                       <div class="fw-bold ">Protein: </div>
+                       <div class="px-2 text-black-50 ">609 calo</div>
+                   </div>
+                   <div class="infor-line d-flex py-1 ">
+                       <div class="fw-bold ">Additives: </div>
+                       <div class="px-2 text-black-50">03</div>
+                   </div>
+                   <div class="infor-line d-flex  py-1 ">
+                       <div class="fw-bold   ">Baking material: </div>
+                       <div class="px-2 text-black-50 ">404    </div>
+                   </div>
+                   <div class="infor-line d-flex py-1 ">
+                       <div class="fw-bold ">Food decoration: </div>
+                       <div class="px-2 text-black-50">03</div>
+                   </div>
+               </div>
+               <div class="btn-addCart ">
+                   Thêm vào giỏ
+               </div>
+           </div>
+       </div>
+   </div>
+   
+   </div>
+   `
+    )
+   }
 async function loadData() {
     await insertMenuCategory(getTypeUrl)
     await insertMenuFood(getMenuUrl)
@@ -175,7 +260,8 @@ $(document).ready(function() {
     $(".order__close-btn").on('click', function() {
         $(".orderModal").addClass('hidden')
     });
-
+     
+   
 })
 
 $(document).delegate('.category__item', 'click', function() {
@@ -194,12 +280,15 @@ $(document).delegate('.food__control--decrease', 'click', function() {
         quantiTyNode.text(quantity - 1)
     }
 })
+ 
 
-
-$(document).delegate('.food__control--increase', 'click', function() {
+$(document).delegate('.food__control--increase ', 'click', function() {
     let quantiTyNode = $(this).closest('.food__control').find('.food__control__quantity')
+     
     let quantity = parseInt(quantiTyNode.text())
+    
     quantiTyNode.text(quantity + 1)
+   
 })
 
 $(document).delegate('.food__btn', 'click', function() {
@@ -260,4 +349,43 @@ $(document).delegate('.order__customer-info__submit', 'click', function(event) {
     }
 
     // loadCartData()
+
+
 })
+$(document).delegate(' .food__name,.food__image,.food__price', 'click', function() {
+    
+    let foodItemNode = $(this).closest('.food__item')
+    let image = foodItemNode.data('image')
+    let id = foodItemNode.data('id')
+    let name = foodItemNode.data('name')
+    let price = foodItemNode.data('price')
+    let quantity = foodItemNode.find('.food__control__quantity').text()
+    let type = foodItemNode.data('category')
+    var showHtml = showModelMenu(id, name, price, quantity, image,type)
+    quantity = Number(quantity)
+    console.log(type)
+    document.getElementById("showModel").innerHTML= showHtml
+    $(".model-container").click(function(e){
+        e.stopImmediatePropagation()
+    })
+    $('#showModel').show()
+    $("body,.order__detail__rm-icon").click(function(e){
+       
+        $('#showModel').hide()  
+    })
+     
+    $(".increase-quantity").click(function(e){
+        quantity +=1
+        $(".value-quantity").text(quantity)
+    })
+    $(".decrease-quatity").click(function(e){
+        quantity -=1
+        if(quantity<1) quantity=1
+         $(".value-quantity").text(quantity)
+     })
+    $(".btn-addCart").click(function(){
+        $('#showModel').hide()  
+        addToCart(id, name, price, quantity, image)
+    })
+})
+ 
