@@ -81,7 +81,7 @@ function showOrderData(order, menu) {
                 returnHtml += `
                 <tr>
                     <td>${menuItem.name}</td>
-                    <td>${menuItem.price}</td>
+                    <td>${formatVNDMoney( menuItem.price)}</td>
                     <td>${item.quantity}</td>
                 </tr>
                 `
@@ -94,7 +94,7 @@ function showOrderData(order, menu) {
             <tr>
                 <td></td>
                 <td>Tổng:</td>
-                <td> ${total}</td>
+                <td> ${formatVNDMoney(total)}</td>
             </tr>
             <tbody>
         </table>
@@ -154,7 +154,7 @@ $(document).ready(function() {
             }
         })
     });
-// notification
+    // notification
 });
 $(document).delegate('.btn-confirm', 'click', function() {
     let id = $(this).closest('.order-item').data('id')

@@ -58,7 +58,7 @@ function showFoodData(food) {
             </div>
             <div class="col-6 food__info">
                 <div class="food__name">${food.name}</div>
-                <div class="food__price">${food.price}đ</div>
+                <div class="food__price">${formatVNDMoney(food.price)}đ</div>
                 <div class="food__control">
                     <span>
                         <i class="far fa-caret-square-left food__control--decrease"></i>
@@ -116,7 +116,7 @@ showModelMenu = (id, name, price, quantity, image,type)=>{
                            ${type}
                        </div>
                        <div class="title-price w-100 d-flex justify-content-end   cl-red fw-bold">
-                           ${price} đ
+                           ${formatVNDMoney(price)} đ
                        </div>
                    </div>
                </div>
@@ -195,8 +195,8 @@ function loadCartData() {
         }
     }
     document.getElementById('order__detail__list').innerHTML = returnHTML
-    document.getElementById('order__subtotal-price').innerText = total
-    document.getElementById('order__totle-price').innerText = total
+    document.getElementById('order__subtotal-price').innerText = formatVNDMoney(total)
+    document.getElementById('order__totle-price').innerText = formatVNDMoney(total)
 }
 
 function showCartItem(item) {
@@ -213,10 +213,10 @@ function showCartItem(item) {
                 <i class="fas fa-times"></i>
             </div>
             <div class="order__detail__quantity">
-                ${item.price} x <input type="number" min="1"  oninput="validity.valid||(value='');" value="${item.quantity}">
+                ${formatVNDMoney(item.price)} x <input type="number" min="1"  oninput="validity.valid||(value='');" value="${item.quantity}">
             </div>
             <div class="order__detail__total">
-                ${parseInt(item.price) * parseInt(item.quantity)}
+                ${formatVNDMoney(parseInt(item.price) * parseInt(item.quantity))}
             </div>
         </div>
     </div>
@@ -388,4 +388,3 @@ $(document).delegate(' .food__name,.food__image,.food__price', 'click', function
         addToCart(id, name, price, quantity, image)
     })
 })
- 
