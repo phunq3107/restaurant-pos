@@ -356,6 +356,7 @@ body {
     right: 30px;
     bottom: 30px;
     transition: linear 0.4s;
+    z-index: 9999;
 }
 
 .openCartBtn:hover {
