@@ -1,0 +1,98 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: phunq3107
+  Date: 11/15/2021
+  Time: 11:26 PM
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/vendor/css/bootstrap.min.css}">
+  <title>Giới thiệu</title>
+</head>
+<body>
+<div class="container">
+  <h1>Bài tập lớn môn công nghệ phần mềm - restaurant POS</h1>
+  <h4 style="color: red">(Trang này chỉ áp dụng trong môi trường phát triển và demo)</h4>
+  <div>
+    <h3>Thành viên</h3>
+    <ul>
+      <li>
+        Nguyễn Quốc Phú – 1914661
+      </li>
+      <li>
+        Đặng Phước Vĩnh Hưng – 1911296
+      </li>
+      <li>
+        Phạm Hồng Khánh – 1913754
+      </li>
+      <li>
+        Phạm Anh Thiên – 1915275
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>Giới thiệu</h3>
+    <p>
+      MVP cho một số giao diện
+    </p>
+  </div>
+  <div>
+    <h3>Công nghệ</h3>
+    <ul>
+      <li>
+        Spring MVC
+      </li>
+      <li>
+        HTML, CSS, Javascript
+      </li>
+      <li>
+        Database
+        <ul>
+          <li>Ở môi trường development: H2-database</li>
+          <li>Ở môi trường production: MySQL</li>
+        </ul>
+      </li>
+      <li>
+        VCS: github <a href="https://github.com/phunq3107/restaurant-pos/tree/springmvc">Link github của
+        project</a>
+      </li>
+      <li>
+        Deployment: Heroku
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>Kết quả</h3>
+    <ul>
+      <li>
+        <a href="/menu">Giao diện menu của khách hàng</a>
+      </li>
+      <li>
+        <a href="/payment">Giao diện thanh toán của khách hàng</a>
+      </li>
+      <li>
+        <a href="/clerk/orders">Giao diện quản lí đơn hàng của nhân viên</a>
+        (Yêu cầu đăng nhập. Username: clerk, password:123456)
+      </li>
+      <li>
+        <a href="/h2-console">Database</a>
+        (Chỉ áp dụng trong môi trường development. Yêu cầu đăng nhập. Username: admin, password:123456)
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>Public API</h3>
+    <ul>
+      <li><a href="/api/v1/menu/items">/api/v1/menu/items</a></li>
+      <li><a href="/api/v1/menu/types">/api/v1/menu/types</a></li>
+    </ul>
+  </div>
+</div>
+
+<script th:src="@{/vendor/js/popper.min.js} "></script>
+<script th:src="@{/vendor/js/bootstrap.min.js} "></script>
+<script th:src="@{/vendor/js/fontawesome.min.js} "></script>
+</body>
+</html>

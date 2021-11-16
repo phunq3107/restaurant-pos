@@ -2,7 +2,7 @@
 /shelf/
 /workspace.xml
 # Datasource local storage ignored files
-/../../../../../../:\Trash\BTL\211_CNPM\restaurant-pos\.idea/dataSources/
+/../../../../../../:\Web\Backend\SpringFramework\restaurantpos\.idea/dataSources/
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
