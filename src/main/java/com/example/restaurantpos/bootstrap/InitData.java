@@ -7,6 +7,7 @@ import com.example.restaurantpos.model.OrderStatus;
 import com.example.restaurantpos.model.Orders;
 import com.example.restaurantpos.service.ManagerService;
 import com.example.restaurantpos.service.OrderServiceImpl;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
@@ -147,36 +148,38 @@ public class InitData implements CommandLineRunner {
         .recommended(true)
         .build()
     );
+    List<OrderItem> orderItems1 = new ArrayList<>();
+    orderItems1.add(OrderItem.builder()
+        .foodId(hamburger.getId())
+        .quantity(2)
+        .build()
+    );
+    orderItems1.add(OrderItem.builder()
+        .foodId(pepsi.getId())
+        .quantity(2)
+        .build()
+    );
 
     orderService.createOrder(Orders.builder()
         .customerName("Khách hàng 1")
         .customerPhone("0123456789")
         .tableNumber("12")
         .status(OrderStatus.pending.getName())
-        .items(List.of(
-            OrderItem.builder()
-                .foodId(hamburger.getId())
-                .quantity(2)
-                .build(),
-            OrderItem.builder()
-                .foodId(pepsi.getId())
-                .quantity(2)
-                .build()
-        ))
+        .items(orderItems1)
         .build()
     );
 
+    List<OrderItem> orderItems2 = new ArrayList<>();
+    orderItems2.add(OrderItem.builder()
+        .foodId(creamCake.getId())
+        .quantity(1)
+        .build());
     orderService.createOrder(Orders.builder()
         .customerName("Khách hàng 2")
         .customerPhone("0123456789")
         .tableNumber("22")
         .status(OrderStatus.preparing.getName())
-        .items(List.of(
-            OrderItem.builder()
-                .foodId(creamCake.getId())
-                .quantity(1)
-                .build()
-        ))
+        .items(orderItems2)
         .build()
     );
 
